@@ -17,7 +17,7 @@ public class IsInInterval {
     }
 
     public static int randomInt() {
-        int a = (int)(Math.random()*(155-5)+5);
+        int a = (int)(Math.random()*(156-5)+5);
         return(a);
     }
 
