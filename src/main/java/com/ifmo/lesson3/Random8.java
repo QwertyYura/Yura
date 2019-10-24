@@ -23,7 +23,7 @@ public class Random8 {
     public static int[] randomNumbers() {
         int[] rd = new int[8];
         for (int i = 0; i < rd.length; i++) {
-            int rnd = (int)(Math.random()*(10-1)+1);
+            int rnd = (int)(Math.random()*(10+1-1)+1);
             rd[i]=rnd;
         }
         return rd;
