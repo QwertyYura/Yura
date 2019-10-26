@@ -5,7 +5,7 @@ public class ThreeDigitsSum {
        программу, вычисляющую и выводящую на экран сумму цифр числа n
      */
     public static void main(String[] args) {
-        int n = 200;
+        int n = 152;
         sum(n);
         n = sum(n);
         System.out.print(n);
@@ -17,10 +17,6 @@ public class ThreeDigitsSum {
         int a = q / 10;
         int b = q % 10;
         n = r + a + b;
-
-        if(r<1||r>=10){
-            n=0;
-        }
 
         return (n);
     }
