@@ -18,7 +18,7 @@ public class Factorial {
     }
 
     public static long factorial(int n) {
-        int c=1;
+        long c=1;
         for (int i = n; i >0; i--) {
             c=i*c;
         }
