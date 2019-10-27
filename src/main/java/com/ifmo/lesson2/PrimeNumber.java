@@ -17,23 +17,28 @@ public class PrimeNumber {
 
         int n = scanner.nextInt();
 
-        String prime = isPrime(n);
+        boolean prime = isPrime(n);
 
-        System.out.println(prime);
+        if(prime==true){
+            System.out.print("Число "+ n + " простое!");
+        }
+        else {
+            System.out.print("Число "+ n + " не является простым!");
+        }
     }
 
-    public static String isPrime(int n) {
+    public static boolean isPrime(int n) {
         int c=0;
         for (int i = 2; i <=Math.sqrt(n); i++) {
             if(n%i==0){
                 c++;
             }
         }
-        if(c>0){
-            return "Число "+ n + " составное!";
+        if(c>0||n<2){
+            return false;
         }
         else {
-            return "Число "+ n + " простое!";
+            return true;
         }
     }
 }
