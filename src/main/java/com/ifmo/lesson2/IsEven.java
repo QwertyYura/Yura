@@ -6,23 +6,18 @@ public class IsEven {
     записанное в переменную n, чётным либо нечётным.
      */
     public static void main(String[] args) {
-        int n = 10;
+        int n = 120;
 
         boolean even = isEven(n);
         if(even==true){
-            System.out.print("Четное");
+            System.out.print("Число "+n+" четное");
         }
         else {
-            System.out.print("Нечетное");
+            System.out.print("Число "+n+" нечетное");
         }
     }
 
     public static boolean isEven(int n) {
-        if(n%2==0) {
-            return true;
-        }
-        else {
-            return false;
-        }
+         return (n%2==0);
     }
 }
