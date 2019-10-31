@@ -21,7 +21,7 @@ public class Random4 {
     public static int[] randomNumbers() {
         int[] random = new int[4];
         for (int i = 0; i < random.length; i++) {
-            int a = (int)(Math.random()*(100-10)+10);
+            int a = (int)(Math.random()*(99+1-10)+10);
             random[i] = a;
         }
         return random;

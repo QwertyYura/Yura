@@ -9,6 +9,13 @@ public class EvenArray {
      */
     public static void main(String[] args) {
         int[] evenArray = evenArray();
+        for (int k = 0; k < evenArray.length; k++) {
+            System.out.print(evenArray[k]+" ");
+        }
+        System.out.print("\n");
+        for (int l = 0; l < evenArray.length; l++) {
+            System.out.println(evenArray[l]);
+        }
     }
 
     public static int[] evenArray() {
@@ -21,14 +28,7 @@ public class EvenArray {
                 evenArray[j] = i;
                 j++;
             }
-            }
-        for (int k = 0; k < evenArray.length; k++) {
-            System.out.print(evenArray[k]+" ");
         }
-        System.out.print("\n");
-        for (int l = 0; l < evenArray.length; l++) {
-            System.out.println(evenArray[l]);
-        }
-        return null;
+        return evenArray;
     }
 }
