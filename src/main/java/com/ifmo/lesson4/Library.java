@@ -72,6 +72,9 @@ public class Library {
      */
     public int take(Book book, int quantity) {
         for (int i = 0; i < departments.length; i++) {
+            if (departments[i]==null){
+                continue;
+            }
             if(departments[i].book.author==book.author&&departments[i].book.title==book.title){
                 int temp = departments[i].quantity;
                 if(quantity>=departments[i].quantity){

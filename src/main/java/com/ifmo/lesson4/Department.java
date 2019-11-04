@@ -1,5 +1,6 @@
 package com.ifmo.lesson4;
 
+
 public class Department {
     Book book;
     int quantity;

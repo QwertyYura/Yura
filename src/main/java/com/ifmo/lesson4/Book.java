@@ -1,5 +1,6 @@
 package com.ifmo.lesson4;
 
+
 public class Book {
     String author;
     String title;
