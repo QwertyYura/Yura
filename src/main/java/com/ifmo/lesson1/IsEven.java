@@ -2,6 +2,7 @@ package com.ifmo.lesson1;
 
     public class IsEven {
         /* Напишите программу, которая выводит true, если число четное и false, если нет. */
+
         public static void main(String[] args) {
             int a = -8;
             boolean b = boul(a);
