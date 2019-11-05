@@ -37,12 +37,12 @@ public class LinkedList {
      */
     public Object get(int i) {
 
-        if(head==null||i<=0){
+        if(head==null||i<0){
          return null;
         }
 
         Item newItem = head;
-        for (int j = 1; j < i ; j++) {
+        for (int j = 0; j < i ; j++) {
             newItem = newItem.next;
             if(newItem == null){
                 return null;
@@ -61,7 +61,7 @@ public class LinkedList {
      */
     public Object remove(int i) {
 
-        if(head==null||i<=0){
+        if(head==null||i<0){
             return null;
         }
 
@@ -69,12 +69,12 @@ public class LinkedList {
         Item previous = head;
         Item following = head;
 
-        if(i==1) {
+        if(i==0) {
             head = deleteItem.next;
             return deleteItem.value;
         }
 
-        for (int j = 1; j < i; j++) {
+        for (int j = 0; j < i; j++) {
 
             previous = deleteItem;
             deleteItem = deleteItem.next;

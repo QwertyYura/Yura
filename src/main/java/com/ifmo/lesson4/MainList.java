@@ -6,7 +6,7 @@ public class MainList {
         newlist.add(5);
         newlist.add(3);
 
-        Object c = newlist.get(2);
+        Object c = newlist.get(0);
         System.out.println(c);
 
         newlist.add("val");
@@ -17,14 +17,14 @@ public class MainList {
         c = newlist.remove(2);
         System.out.println(c);
 
-        c = newlist.get(3);
+        c = newlist.get(1);
         System.out.println(c);
 
         newlist.add(78);
         newlist.add("val4");
         newlist.add("val5");
 
-        c = newlist.get(5);
+        c = newlist.get(4);
         System.out.println(c);
     }
 }
