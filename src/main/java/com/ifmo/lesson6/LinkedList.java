@@ -97,17 +97,14 @@ public class LinkedList implements List, Stack, Queue {
             @Override
             public boolean hasNext() {
 
-                if(iterator!=null){
-                    itervalue = iterator.value;
-                    iterator = iterator.next;
-                    return true;
-                }
-                return false;
+                return iterator!=null;
             }
 
             @Override
             public Object next() {
-                    return itervalue;
+                itervalue = iterator.value;
+                iterator = iterator.next;
+                return itervalue;
                 }
         };
     }

@@ -12,8 +12,17 @@ public class MainArrayList {
         arrayList.add("g");
         arrayList.add("h");
         arrayList.add("i");
-        arrayList.add("iiiii");
-
+        arrayList.add("k");
+        arrayList.add("l");
+        arrayList.remove(1);
+        arrayList.remove(1);
+        arrayList.remove(1);
+        arrayList.remove(1);
+        arrayList.add("88");
+        arrayList.add("800");
+        arrayList.remove(7);
+        Object b = arrayList.get(5);
+        System.out.println(b);
 
 
         for (Object a:arrayList) {

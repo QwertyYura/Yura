@@ -19,7 +19,7 @@ public class ArrayList implements List {
     private static final int DEFAULT_SIZE = 10;
 
     private Object[] values;
-
+    private int size;
     /**
      * Создаёт новый {@link #ArrayList} с размером внутреннего массива по умолчанию.
      */
@@ -40,20 +40,22 @@ public class ArrayList implements List {
     /** {@inheritDoc} */
     @Override
     public void add(Object val) {
-        for (int i = 0; i < values.length; i++) {
-            if (values[i] == null) {
-                values[i] = val;
-                return;
-            }
-        }
 
-            ArrayList arrayList = new ArrayList(values.length*2);
+        if(size<values.length) {
+            values[size] = val;
+            size++;
+            return;
+        }
+            Object[] newValues = new Object[values.length*2];
             int c=0;
             for (int j = 0; j < values.length; j++) {
-                arrayList.values[j]=values[j];
+                newValues[j]=values[j];
                 c++;
             }
-            arrayList.values[c]=val;
+            newValues[c]=val;
+
+            values = newValues;
+            size++;
     }
 
     /** {@inheritDoc} */
@@ -66,9 +68,18 @@ public class ArrayList implements List {
     @Override
     public Object remove(int i) {
         Object temp = values[i];
-        for (int j = i; j < values.length-1; j++) {
-            values[j]=values[j++];
+
+        int c =i;
+
+        for (int j = i; j < values.length; j++) {
+            if(values[c]==null){
+                break;
+            }
+            c++;
+            values[j]=values[c];
         }
+        values[c]=null;
+        size--;
         return temp;
     }
 
@@ -80,18 +91,12 @@ public class ArrayList implements List {
             @Override
             public boolean hasNext() {
 
-                    if(values[i]!=null){
-                        if(i<values.length) {
-                            i++;
-                        }
-                        return true;
-                    }
-                    return false;
+                    return values[i] != null;
                 }
 
             @Override
             public Object next() {
-                return values[i-1];
+                return values[i++];
             }
         };
     }

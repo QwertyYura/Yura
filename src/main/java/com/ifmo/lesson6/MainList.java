@@ -1,5 +1,7 @@
 package com.ifmo.lesson6;
 
+import java.util.Iterator;
+
 public class MainList {
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
@@ -17,7 +19,7 @@ public class MainList {
         linkedList.add(1111);
         a = linkedList.get(5);
         System.out.println(a);
-        linkedList.push(0000);
+        linkedList.push(5555);
         linkedList.remove(2);
         a = linkedList.get(0);
         System.out.println(a);
@@ -31,5 +33,14 @@ public class MainList {
         for (Object i:linkedList) {
             System.out.print(i+" ");
         }
+
+        Iterator iterator = linkedList.iterator();
+        Object b = iterator.next();
+        iterator.next();
+       b= iterator.next();
+
+
+
+        System.out.println(b);
     }
 }
