@@ -5,11 +5,11 @@ package com.ifmo.lesson1;
 
         public static void main(String[] args) {
             int a = -8;
-            boolean b = boul(a);
+            boolean b = isEven(a);
             System.out.print(b);
         }
 
-        public static boolean boul(int a) {
+        public static boolean isEven(int a) {
             return (a%2==0);
         }
     }
