@@ -14,8 +14,9 @@ public class Random4 {
         for (int i = 0; i < randomNumbers.length; i++) {
             System.out.print(randomNumbers[i]+" ");
         }
-        String out = isIncreasingSequence(randomNumbers);
-        System.out.print("\n" + out);
+        boolean out = isIncreasingSequence(randomNumbers);
+
+        System.out.print("\n" + (out==true));
     }
 
     public static int[] randomNumbers() {
@@ -27,15 +28,10 @@ public class Random4 {
         return random;
     }
 
-    public static String isIncreasingSequence(int[] randomNumbers) {
+    public static boolean isIncreasingSequence(int[] randomNumbers) {
         int[] clone = randomNumbers.clone();
         Arrays.sort(clone);
 
-        if(Arrays.equals(randomNumbers,clone)){
-            return "Массив является строго возрастающей последовательностью";
-        }
-        else {
-            return "Массив не является строго возрастающей последовательностью";
-        }
+        return ((Arrays.equals(randomNumbers,clone))==true);
     }
 }
