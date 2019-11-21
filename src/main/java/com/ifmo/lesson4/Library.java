@@ -71,12 +71,13 @@ public class Library {
      * @return Actual number of books taken.
      */
     public int take(Book book, int quantity) {
+        int temp = 0;
         for (int i = 0; i < departments.length; i++) {
             if (departments[i]==null){
                 continue;
             }
             if(departments[i].book.author==book.author&&departments[i].book.title==book.title){
-                int temp = departments[i].quantity;
+                temp = departments[i].quantity;
                 if(quantity>=departments[i].quantity){
                     departments[i]=null;
                 }
@@ -84,9 +85,8 @@ public class Library {
                     temp = quantity;
                     departments[i].quantity = departments[i].quantity - quantity;
                 }
-                return temp;
             }
         }
-        return 0;
+        return temp;
     }
 }
