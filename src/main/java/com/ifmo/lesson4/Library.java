@@ -76,7 +76,7 @@ public class Library {
             if (departments[i]==null){
                 continue;
             }
-            if(departments[i].book.author==book.author&&departments[i].book.title==book.title){
+            if(departments[i].book.author.equals(book.author) && departments[i].book.title.equals(book.title)){
                 temp = departments[i].quantity;
                 if(quantity>=departments[i].quantity){
                     departments[i]=null;
