@@ -40,13 +40,13 @@ public class ArrayList implements List {
     /** {@inheritDoc} */
     @Override
     public void add(Object val) {
-
         if(size<values.length) {
             values[size] = val;
             size++;
             return;
         }
-            Object[] newValues = new Object[values.length*2];
+
+        Object[] newValues = new Object[values.length*2];
             int c=0;
             for (int j = 0; j < values.length; j++) {
                 newValues[j]=values[j];
@@ -90,9 +90,11 @@ public class ArrayList implements List {
             int i=0;
             @Override
             public boolean hasNext() {
-
-                    return values[i] != null;
+                if(i==values.length){
+                    return false;
                 }
+                return values[i] != null;
+            }
 
             @Override
             public Object next() {
