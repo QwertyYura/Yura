@@ -32,7 +32,11 @@ public class LinkedList implements List, Stack, Queue {
         if (head==null){
             return null;
         }
-
+        if(head.next==null){
+            Object temp = head.value;
+            head = null;
+            return temp;
+        }
         head = head.next;
         return head.value;
     }
