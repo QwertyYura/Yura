@@ -70,7 +70,7 @@ public class Library {
      * @param quantity How many books to take.
      * @return Actual number of books taken.
      */
-    public int take(Book book, int quantity) {
+    public int get(Book book, int quantity) {
         for (int i = 0; i < departments.length; i++) {
             if (departments[i]==null){
                 continue;

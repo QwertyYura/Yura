@@ -1,5 +1,5 @@
 package com.ifmo.lesson4;
-
+// Отдел
 
 public class Department {
     Book book;
