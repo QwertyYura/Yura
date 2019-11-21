@@ -20,7 +20,7 @@ import javax.swing.*;
  *     library.put(new Book("Tolstoy", "War and peace"), 6); // return false
  *
  *     // Забираем все книги Тёмной башни, чтобы освободить место.
- *     library.take(new Book("Stephen King", "Dark Tower"), 3) // return 3
+ *     library.take(new Book("Stephen King", "Dark Tower"), 3) // return  3
  *
  *     // Теперь мы можем успешно добавить "Войну и мир".
  *     library.put(new Book("Tolstoy", "War and peace"), 6); // return true
