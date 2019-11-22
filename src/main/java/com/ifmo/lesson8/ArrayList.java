@@ -1,5 +1,7 @@
 package com.ifmo.lesson8;
 
+import com.ifmo.lesson6.ArrayListIterator;
+
 import java.util.Iterator;
 
 /**
@@ -19,7 +21,7 @@ public class ArrayList<T> implements List<T> {
     private static final int DEFAULT_SIZE = 10;
 
     private Object[] values;
-
+    private int size;
     /**
      * Создаёт новый {@link #ArrayList} с размером внутреннего массива по умолчанию.
      */
@@ -40,31 +42,67 @@ public class ArrayList<T> implements List<T> {
     /** {@inheritDoc} */
     @Override
     public void add(T val) {
-        // TODO implement.
+        if(size<values.length) {
+            values[size] = val;
+            size++;
+            return;
+        }
+
+        Object[] newValues = new Object[values.length*2];
+        int c=0;
+        for (int j = 0; j < values.length; j++) {
+            newValues[j]=values[j];
+            c++;
+        }
+        newValues[c]=val;
+
+        values = newValues;
+        size++;
     }
 
     /** {@inheritDoc} */
     @SuppressWarnings("unchecked")
     @Override
     public T get(int i) {
-        // TODO implement.
-
         return (T) values[i];
     }
 
     /** {@inheritDoc} */
     @Override
     public T remove(int i) {
-        // TODO implement.
+        Object temp = values[i];
 
-        return (T) values[i];
+        int c =i;
+
+        for (int j = i; j < values.length; j++) {
+            if(values[c]==null){
+                break;
+            }
+            c++;
+            values[j]=values[c];
+        }
+        values[c]=null;
+        size--;
+        return (T) temp;
     }
 
     /** {@inheritDoc} */
     @Override
     public Iterator<T> iterator() {
-        // TODO implement.
+        return new ArrayListIterator() {
+            int i=0;
+            @Override
+            public boolean hasNext() {
+                if(i==values.length){
+                    return false;
+                }
+                return values[i] != null;
+            }
 
-        return null;
+            @Override
+            public Object next() {
+                return (T)values[i++];
+            }
+        };
     }
 }

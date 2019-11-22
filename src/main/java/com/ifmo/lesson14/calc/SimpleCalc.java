@@ -1,5 +1,6 @@
 package com.ifmo.lesson14.calc;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 /*
@@ -18,7 +19,7 @@ import java.util.Scanner;
  * подробными описаниями ошибок и как их исправить. Например,
  * если имя переменной не найдено или использовался неверный синтаксис.
  */
-public class SimpleCalc {
+ public class SimpleCalc {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -42,8 +43,8 @@ public class SimpleCalc {
     }
 
     static int calculate(String line) throws CalcException {
-        if (!line.contains("+") && !line.contains("-"))
-            throw new CalcException("Expression must contain '+' or '-': " + line);
+        if (!(line.contains("+") || line.contains("-") || line.contains("=")))
+            throw new CalcException("Expression must contain '+' or '-' or '=': " + line);
 
         String[] operands = line.split(" ");
 
@@ -51,6 +52,13 @@ public class SimpleCalc {
             throw new CalcException("Expression must have only 3 operands separated with space (e.g. 2 + 4): " + line);
 
         OPERATOR operator = OPERATOR.parse(operands[1]);
+
+
+        if (operator == OPERATOR.EQUAL) {
+
+            HashMap<String, Integer> value = new HashMap<>();
+            value.put(operands[0], parseOperand(operands[2]));
+        }
 
         int op1 = parseOperand(operands[0]);
         int op2 = parseOperand(operands[2]);
@@ -68,7 +76,7 @@ public class SimpleCalc {
     }
 
     private enum OPERATOR {
-        PLUS, MINUS;
+        PLUS, MINUS, EQUAL;
 
         int apply(int arg1, int arg2) throws CalcException {
             switch (this) {
@@ -90,6 +98,8 @@ public class SimpleCalc {
 
                 case "-":
                     return MINUS;
+                case "=":
+                    return EQUAL;
             }
 
             throw new CalcException("Incorrect operator: " + str);
