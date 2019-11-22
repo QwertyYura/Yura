@@ -7,7 +7,7 @@ public class MainList {
         LinkedList linkedList = new LinkedList();
         linkedList.add("Magic");
 
-        Object b = linkedList.take();
+        Object b = linkedList.get(1);
 
         System.out.println(b);
     }

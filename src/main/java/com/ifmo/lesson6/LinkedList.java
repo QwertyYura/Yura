@@ -96,7 +96,7 @@ public class LinkedList implements List, Stack, Queue {
 
         return new LinkedListIterator() {
             Item iterator = head;
-            Object itervalue;
+            Object itervalue=null;
 
             @Override
             public boolean hasNext() {
