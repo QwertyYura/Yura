@@ -61,6 +61,9 @@ public class ArrayList implements List {
     /** {@inheritDoc} */
     @Override
     public Object get(int i) {
+        if(i>=values.length){
+            return null;
+        }
         return values[i];
     }
 
