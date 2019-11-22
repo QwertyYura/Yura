@@ -70,6 +70,9 @@ public class ArrayList implements List {
     /** {@inheritDoc} */
     @Override
     public Object remove(int i) {
+        if(i>=values.length){
+            return null;
+        }
         Object temp = values[i];
 
         int c =i;
