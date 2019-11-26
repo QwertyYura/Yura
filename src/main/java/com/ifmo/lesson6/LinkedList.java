@@ -32,13 +32,9 @@ public class LinkedList implements List, Stack, Queue {
         if (head==null){
             return null;
         }
-        if(head.next==null){
-            Object temp = head.value;
-            head = null;
-            return temp;
-        }
+        Object temp = head.value;
         head = head.next;
-        return head.value;
+        return temp;
     }
 
     /** {@inheritDoc} */
@@ -129,7 +125,8 @@ public class LinkedList implements List, Stack, Queue {
             return null;
         }
 
-        head=head.next;
-        return head.value;
+        Object temp = head.value;
+        head = head.next;
+        return temp;
     }
 }

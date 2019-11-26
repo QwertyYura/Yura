@@ -101,9 +101,9 @@ public class ArrayList implements List {
             int i=0;
             @Override
             public boolean hasNext() {
-                if(i==values.length-1){
+              /*  if(i==values.length-1){
                     return false;
-                }
+                }*/
                 return values[i] != null;
             }
 
