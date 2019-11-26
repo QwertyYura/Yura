@@ -109,7 +109,10 @@ public class ArrayList implements List {
 
             @Override
             public Object next() {
-                return values[i++];
+                if(i<values.length-1) {
+                    return values[i++];
+                }
+                return null;
             }
         };
     }
