@@ -81,6 +81,11 @@ public class ArrayList implements List {
             if(values[c]==null){
                 break;
             }
+            if(c==values.length-1){
+                values[c]=null;
+                size--;
+                return temp;
+            }
             c++;
             values[j]=values[c];
         }
