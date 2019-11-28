@@ -3,14 +3,12 @@ package com.ifmo.lesson19;
 import com.ifmo.lesson6.List;
 
 public class A {
-    private int i;
-    private String s;
-  //  private List list;
+    private int number;
+    private String string;
 
     public A(int i, String s) {
-        this.i = i;
-        this.s = s;
-    //    this.list = list;
+        this.number = i;
+        this.string = s;
     }
 }
 
