@@ -14,10 +14,11 @@ public class Program {
                     System.out.println("Before barrier");
                     try {
                         b.await();
+                        System.out.println("After barrier");
+
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println("After barrier");
                 }
             }.start();
         }
